@@ -1,0 +1,59 @@
+.dl__box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .dl__box2 {
+    height: 70%;
+    width: 30%;
+    color: #283747;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: solid #5cbdaa;
+
+    .dl__box3 {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 80%;
+      margin: 0 auto;
+
+      .dl__title {
+        margin-top: 20px;
+        font-size: 30px;
+        width: 100%;
+        text-align: center;
+      }
+      .dl__error {
+        color: #D8000C;
+      }
+      
+      .dl__field {
+        margin-top: 20px;
+        color: #283747;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+        #user_nickname {
+        }
+      }
+      .dl__actions {
+        margin: 20px 0;
+        text-align: right;
+        input {
+          cursor: pointer;
+          padding: 0.5em 1em;
+          background: white;
+          border-radius: 3px;
+          background-color:#5cbdaa;
+          color: white;
+          border: solid 1.5px #5cbdaa;
+        }
+      }
+    }
+  }
+}

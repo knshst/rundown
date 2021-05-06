@@ -1,0 +1,25 @@
+.pi
+  .pi__new
+    %p.pi__new__title
+      新着一覧
+
+  .pi__main
+    .wrap
+      = form_tag(search_posts_path, :method => "get", :class => "search-form") do |form|
+        = text_field_tag :keyword, "", placeholder: "タイトルで検索", class: "search-input"
+        = button_tag :type => "submit", :class =>"search-btn" do
+          %i.fa.fa-search
+    .pi__main__content.show
+      %ul.pi__main__tab
+        - @posts.each do |p|
+          %li.pi__main__category
+            .pi__main__category2
+              .pi__main__window
+                %a{:href => "/users/#{p.user.id}"}
+                  = p.user.nickname
+                .pi__main__window
+                  = p.radio
+              %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "180", :src => "https://www.youtube.com/embed/#{p.content.scan(/=(\w+)/).join}?start=#{p.start}", :width => "320"}
+              .pi__main__window2
+                タイトル：
+                = link_to "#{p.title}", "/posts/#{p.id}", method: :get, class: "pi__main__windowlink" 

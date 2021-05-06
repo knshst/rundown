@@ -1,0 +1,41 @@
+.ps
+  .ps__user__name
+    %p.ps__user__name__nickname
+      = @post.user.nickname
+      さんのノート
+
+  .ps2
+    .ps__left
+      .ps__left__window
+        .ps__left__title
+          タイトル：
+          = @post.title
+        .ps__left__window__inner
+          - if user_signed_in? && current_user.id == @post.user_id
+            .ps__right__ul
+              = link_to '編集', "/posts/#{@post.id}/edit", method: :get
+              = link_to '削除', "/posts/#{@post.id}", method: :delete, data: { confirm: '削除しますか？' }
+        %p.ps__left__text
+          = @post.text
+
+    .ps__right
+
+      .ps__right__top
+        .ps__right__video
+          %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "396", :src => "https://www.youtube.com/embed/#{@post.content.scan(/=(\w+)/).join}?start=#{@post.start}", :width => "704"}
+
+      .ps__right__bottom
+        - if @comments
+          .ps__right__box
+            .ps__right__postit
+              - @comments.each do |comment|
+                %p.ps__right__comment
+                  = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                  ：
+                  = "#{comment.text}"
+        .ps__right__check
+          .ps__right__container
+            = form_for ([@post, @comment]), id: "new_comment" do |form|
+              = form.text_area :text, placeholder: "コメントする", rows: "5", class: "textbox"
+              = form.submit "送信", class: "form__submit"
+

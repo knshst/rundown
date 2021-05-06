@@ -1,0 +1,33 @@
+.pn
+  = form_for @post do |f|
+    .ps__new
+      %p.ps__new__form
+        作成フォーム
+      .pn__special 
+        .text-input
+          = f.text_field :content, placeholder: "例：https://www.youtube.com/watch?v=EXAMPLE", size: "30", class: "input1"
+          %label{:for => "input1"} YouTube URL
+      = f.text_area :title, placeholder: "ノートのタイトル", rows: "1", class: "ps__new__title"
+      = f.text_area :text, placeholder: "学習メモ", rows: "10", class: "ps__new__memo"
+      .ps__new__detail
+        .ps__new__time
+          %p
+            動画の再生開始時間を入力してください 
+          %input#num0{:onfocus => "number()", :onkeyup => "number()", :size => "3", :type => "text", placeholder: "0"}分
+          %input#num1{:onfocus => "number()", :onkeyup => "number()", :size => "3", :type => "text", placeholder: "0"}秒 〜
+          -# 分から秒するにする計算結果を意図的に見せないようにしているが、実際にDBへ保存されてる値はこの下のinputである、inputタグなので、post[start]でpostモデルのstartに渡している。
+          %input#start{:name => "post[start]", :type => "hidden", :value => "0"}
+        .ps__new__radio
+          %p
+            評価（3段階）
+          .pe__new__technology
+            %input#male{:name => "post[radio]", :type => "radio", :value => "★★★"}
+            %label{:for => "technology"} ★★★
+          .pe__new__english
+            %input#female{:name => "post[radio]", :type => "radio", :value => "★★"}
+            %label{:for => "english"} ★★
+          .pe__new__music
+            %input#female{:name => "post[radio]", :type => "radio", :value => "★"}
+            %label{:for => "music"} ★
+      .ps__new__send
+        = f.submit "送信"

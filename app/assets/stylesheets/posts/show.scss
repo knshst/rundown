@@ -1,0 +1,187 @@
+.ps {
+  width: 100%;
+  height: 100%;
+  .ps__user__name {
+    position: absolute;
+    top: 0;
+    margin-top: 28px;
+    margin-left: calc(5% / 2);
+    display: inline-flex;
+    animation: fluffy1 2s infinite;
+    @keyframes fluffy1 {
+      0% {transform: translate(0px, 0px) rotateZ(0deg)}
+      5% {transform: translate(0px, 0px) rotateZ(0deg)}
+      10% {transform: translate(0px, 0px) rotateZ(0deg)}
+      25% {transform: translate(0px, 0px) rotateZ(-2deg)}
+      25% {transform: translate(0px, 0px) rotateZ(2deg)}
+      50% {transform: translate(0px, 0px) rotateZ(-2deg)}
+      80% {transform: translate(0px, 0px) rotateZ(0deg)}
+      90% {transform: translate(0px, 0px) rotateZ(0deg)}
+      100% {transform: translate(0px, 0px) rotateZ(0deg)}
+    }
+    .fluffy1 {
+      animation-duration: 1s;
+    }
+    p {
+      border: 1.5px solid white;
+      border-radius: 5px;
+      color: white;
+      padding: 0 10px;
+      font-size: 15px;
+    }
+  }
+
+  .ps2 {
+    margin: 0 auto;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  // 左のコンテンツ
+    .ps__left {
+      width: calc(100% - 710px);
+      margin-right: 10px;
+      margin-bottom: 10px;
+      height: calc(100% - 20px);
+      overflow: scroll;
+      color: #696969;
+      background-color: #fff;
+      a:link, a:visited, a:hover {
+        color: #696969;
+      }
+      &__window {
+        width: calc(100% - 45px);
+        height: calc(100% - 40px);
+        margin: 20px 25px 20px 20px;
+        &__inner {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+          a {
+            margin-right: 10px;
+          }
+        }
+        .ps__left__text {
+          text-align: left;
+          white-space: pre-wrap;
+          word-break: break-all;
+          background-color: #fff;
+          background-image: linear-gradient(180deg, rgba(100, 100, 100, 0) 0%, rgba(100, 100, 100, 0) 98%, #646464 100%);
+          background-size: 100% 2em;
+          line-height: 2em;
+        }
+      }
+    }
+
+  // 右のコンテンツ
+    .ps__right {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      height: calc(100% - 20px);
+      &__top {
+        display: flex;
+        .ps__right__video {
+          width: 710px;
+          height: 402px;
+          text-align: center;
+          iframe {
+            align-items: center;
+            top: 0;
+            left: 0;
+            border: solid 3px #fff;
+          }
+        }
+      }
+
+      &__bottom {  
+        display: flex;
+        margin-top: 10px;
+        height: 100%;
+        width: 710px;
+        color: #696969;
+        a:link, a:visited, a:hover, a:active {
+          color: #696969;
+        }
+        .ps__right__box {
+          width: 100%;
+          height: 100%;
+          background-image: linear-gradient(90deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem), linear-gradient(90deg, hsla(60, 100%, 85%, 1), hsla(60, 100%, 85%, 1));
+          box-shadow: .25rem 0 .25rem hsla(0, 0%, 0%, .1);
+          .ps__right__postit {
+            height: calc(100% - 20px);
+            transform: rotate(0deg);
+            text-overflow: ellipsis;
+            overflow: scroll;
+            margin: 10px 20px 10px 40px;
+            .ps__right__comment {
+              width: calc(100% - 10px);
+              margin: 5px;
+              word-break: break-all;
+            }
+          }
+          .ps__right__postit::-webkit-scrollbar {
+            display: none;
+          }
+        }
+        .ps__right__check {
+          width: 30%;
+          height: 100%;
+          margin: 0 0 0 10px;
+          text-align: right;
+          .ps__right__container {
+            background-color: #fff;
+            height: 100%;
+            width: 100%;
+            #new_comment {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              #comment_text {
+                margin: 10px 10px 0 10px;
+                padding: 10px;
+                height: 100%;
+                resize: none;
+              }
+              input {
+                margin: 10px;
+                padding: 0.5em 1em;
+                background: white;
+                border-radius: 3px;
+                color: #696969;
+                cursor: pointer;
+              }
+            }
+          }
+          // .ps__right__more {
+          //   height: 20%;
+          //   width: 100%;
+          //   .ps__right__ul {
+          //     display: flex;
+          //     justify-content: space-between;
+          //     width: 100%;
+          //     .ps__right__list {
+          //       width: calc(50% - 20px);
+          //       height: calc(100% - 20px);
+          //       text-align: center;
+          //       background: white;
+          //       border-radius: 3px;
+          //       display:inline-block;
+          //       margin: 10px;
+          //       a {
+          //         height: calc(100% - 20px);
+          //         display:block;
+          //         padding: 5px 10px;
+          //       }
+          //       a:link, a:visited, a:hover {
+          //         color: #696969;
+          //       }
+          //     }
+          //   }
+          // }
+        }
+      }
+    }
+  }
+}

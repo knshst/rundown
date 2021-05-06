@@ -1,0 +1,43 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}
+    %title RUNDOWN
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link(href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet")
+
+  %body
+    %header.header
+
+      .header__left
+
+      .header__center
+        = link_to image_tag(src="logo.png", size: "55x55", class: "header__center__image"), root_path
+      .header__right
+        - if user_signed_in?
+          .header__right__button
+            .header__right__button__slide
+            = link_to "マイページ", "/users/#{current_user.id}", class: "header__right__button__box"
+          .header__right__button
+            .header__right__button__slide
+            = link_to "新規ノート", new_post_path, class: "header__right__button__box"
+          .header__right__button
+            .header__right__button__slide
+            = link_to "共有ノート", posts_path, class: "header__right__button__box"
+          .header__right__button#exception
+            .header__right__button__slide
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right__button__box"
+        - else
+          .header__right__button
+            .header__right__button__slide
+            = link_to "ログイン", new_user_session_path, class: "header__right__button__box"
+          .header__right__button#exception
+            .header__right__button__slide
+            = link_to "新規登録", new_user_registration_path, class: "header__right__button__box"
+
+    %div.main
+      = yield
+
+
+

@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+<div class="dl__box">
+  <div class="dl__box2">
+    <div class="dl__box3"> 
+
+      <h2 class="dl__title">ログイン</h2>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="dl__error">
+          <%= flash[:alert] %>
+
+        <div class="dl__field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="dl__field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+
+        <%# <% if devise_mapping.rememberable? %>
+          <%# <div class="dl__field"> %>
+            <%# <%= f.check_box :remember_me %>
+            <%# <%= f.label :remember_me %>
+          <%# </div> %>
+        <%# <% end %>
+
+        <div class="dl__actions">
+          <%= f.submit "ログイン" %>
+        </div>
+      <% end %>
+
+      <%# <div class="dl__lender">
+        <%= render "devise/shared/links" %>
+      <%# </div> %>
+    </div>
+  </div>
+</div>

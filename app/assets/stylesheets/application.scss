@@ -1,0 +1,106 @@
+@import "reset";
+@import "devise/registrations/new";
+@import "devise/sessions/new";
+
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+@import "welcome";
+@import "posts/index";
+@import "posts/show";
+@import "posts/new";
+@import "posts/edit";
+@import "users";
+
+html {
+  font-family: "M PLUS Rounded 1c";
+
+  a:link, a:visited, a:hover, a:active {
+    cursor: pointer;
+  }
+
+  body {
+    background: #283747;
+    width: 100%;
+    height: 100vh;
+
+    .header {
+      height: 70px;
+      width: 100%;
+      position: relative;
+      display: flex;
+
+      &__left {
+        width: calc(100% / 3);
+      }
+
+      &__center {
+        width: calc(100% / 3);
+        a {
+          margin: 0 auto;
+          height: 70px;
+          width: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .header__center__image:hover {
+            animation: header__center__image 0.5s infinite;
+          }
+          @keyframes header__center__image {
+            0% {transform: translate(0px, 0px) rotateZ(0deg)}
+            25% {transform: translate(2px, 2px) rotateZ(1deg)}
+            50% {transform: translate(0px, 2px) rotateZ(0deg)}
+            75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+            100% {transform: translate(0px, 0px) rotateZ(0deg)}
+          }
+        }
+      }
+    
+      &__right {
+        height: 70px;
+        width: calc(100% / 3 - (calc(5% / 2)));
+        line-height: 70px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 15px;
+        margin-right: calc(5% / 2);
+        &__button {
+          position: relative;
+          display: inline-flex;
+          overflow: hidden;
+          margin-right: 20px;
+          &__slide {
+            width: 100%;
+            height: 5px;
+            top: 38px;
+            left: -200px;
+            background: #5cbdaa;
+            position: absolute;
+            transition: all .35s ease-Out;
+          }
+          &__box {
+            text-decoration: none;
+            color: white;
+            position: relative;
+          }
+          &:hover {
+            .header__right__button__slide {
+              left: 0;
+            }
+          }
+        }
+        #exception {
+          margin-right: 0;
+        }
+      }
+    }
+    .main {
+      height: calc(100% - 70px);
+      width: 100%;
+    }
+
+  }
+}
+
+

@@ -1,0 +1,46 @@
+.us
+  .us__user__name
+    %p.us__user__name__nickname
+      = @nickname
+      さんのノート
+      
+  .us__main
+    %ul.us__main__tab
+      %li.us__main__list
+        %a.us__main__item.active ★★★
+      %li.us__main__list
+        %a.us__main__item ★★
+      %li.us__main__list
+        %a.us__main__item ★
+
+    %ul.us__main__content
+      %li.us__main__category.show
+        - @technology.each do |p|
+          .us__main__window
+            %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "180", :src => "https://www.youtube.com/embed/#{p.content.scan(/=(\w+)/).join}?start=#{p.start}", :width => "320"}
+            .us__main__title
+              タイトル：
+              = p.title
+            = link_to '詳細', "/posts/#{p.id}", method: :get
+            %p.us__main__memo
+              = p.text
+      %li.us__main__category
+        - @english.each do |p|
+          .us__main__window
+            %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "180", :src => "https://www.youtube.com/embed/#{p.content.scan(/=(\w+)/).join}?start=#{p.start}", :width => "320"}
+            .us__main__title
+              タイトル：
+              = p.title
+            = link_to '詳細', "/posts/#{p.id}", method: :get
+            .us__main__memo
+              = p.text
+      %li.us__main__category
+        - @music.each do |p|
+          .us__main__window
+            %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "180", :src => "https://www.youtube.com/embed/#{p.content.scan(/=(\w+)/).join}?start=#{p.start}", :width => "320"}
+            .us__main__title
+              タイトル：
+              = p.title
+            = link_to '詳細', "/posts/#{p.id}", method: :get
+            .us__main__memo
+              = p.text
