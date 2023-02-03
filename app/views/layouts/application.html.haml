@@ -18,20 +18,20 @@
         - if user_signed_in?
           .header__right__button
             .header__right__button__slide
-            = link_to "マイページ", "/users/#{current_user.id}", class: "header__right__button__box"
+            = link_to "My Page", "/users/#{current_user.id}", class: "header__right__button__box"
           .header__right__button
             .header__right__button__slide
-            = link_to "新規ノート", new_post_path, class: "header__right__button__box"
+            = link_to "New Note", new_post_path, class: "header__right__button__box"
           .header__right__button
             .header__right__button__slide
-            = link_to "共有ノート", posts_path, class: "header__right__button__box"
+            = link_to "Share Note", posts_path, class: "header__right__button__box"
           .header__right__button#exception
             .header__right__button__slide
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right__button__box"
+            = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "header__right__button__box"
         - else
           .header__right__button
             .header__right__button__slide
-            = link_to "ログイン", new_user_session_path, class: "header__right__button__box"
+            = link_to "Sign In", new_user_session_path, class: "header__right__button__box"
           .header__right__button#exception
             .header__right__button__slide
             = link_to "新規登録", new_user_registration_path, class: "header__right__button__box"
