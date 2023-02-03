@@ -1,10 +1,5 @@
-before_action :move_to_login
 class UsersController < ApplicationController
-class UsersController < ApplicationController
-class UsersController < ApplicationController
-class UsersController < ApplicationController
-class UsersController < ApplicationController
-class UsersController < ApplicationController
+  before_action :move_to_login
 
   def show
     user = User.find(params[:id])
