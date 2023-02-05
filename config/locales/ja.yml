@@ -5,9 +5,9 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-        email: メールアドレス
-        password: パスワード
-        encrypted_password: パスワード（確認用）
+        email: Email
+        password: Password
+        encrypted_password: Confirm Password
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

@@ -2,7 +2,7 @@
   .us__user__name
     %p.us__user__name__nickname
       = @nickname
-      さんのノート
+      's Note
       
   .us__main
     %ul.us__main__tab
@@ -19,9 +19,9 @@
           .us__main__window
             %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "180", :src => "https://www.youtube.com/embed/#{p.content.scan(/=(\w+)/).join}?start=#{p.start}", :width => "320"}
             .us__main__title
-              タイトル：
+              Title：
               = p.title
-            = link_to '詳細', "/posts/#{p.id}", method: :get
+            = link_to 'Detail', "/posts/#{p.id}", method: :get
             %p.us__main__memo
               = p.text
       %li.us__main__category
@@ -29,9 +29,9 @@
           .us__main__window
             %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "180", :src => "https://www.youtube.com/embed/#{p.content.scan(/=(\w+)/).join}?start=#{p.start}", :width => "320"}
             .us__main__title
-              タイトル：
+              Title：
               = p.title
-            = link_to '詳細', "/posts/#{p.id}", method: :get
+            = link_to 'Detail', "/posts/#{p.id}", method: :get
             .us__main__memo
               = p.text
       %li.us__main__category
@@ -39,8 +39,8 @@
           .us__main__window
             %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "180", :src => "https://www.youtube.com/embed/#{p.content.scan(/=(\w+)/).join}?start=#{p.start}", :width => "320"}
             .us__main__title
-              タイトル：
+              Title：
               = p.title
-            = link_to '詳細', "/posts/#{p.id}", method: :get
+            = link_to 'Detail', "/posts/#{p.id}", method: :get
             .us__main__memo
               = p.text

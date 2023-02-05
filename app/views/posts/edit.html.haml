@@ -2,23 +2,23 @@
   = form_for @post do |f|
     .pe__edit
       %p.pe__edit__form
-        編集フォーム
+        Edit form
       .pe__special 
         .text-input
-          = f.text_field :content, placeholder: "例：https://www.youtube.com/watch?v=EXAMPLE", size: "30", class: "pe__edit__url"
+          = f.text_field :content, placeholder: "Ex) https://www.youtube.com/watch?v=xxx", size: "30", class: "pe__edit__url"
           %label{:for => "input1"} YouTube URL
-      = f.text_area :title, placeholder: "タイトル", rows: "1", class: "pe__edit__title"
-      = f.text_area :text, placeholder: "メモ", rows: "10", class: "pe__edit__memo"
+      = f.text_area :title, placeholder: "Title", rows: "1", class: "pe__edit__title"
+      = f.text_area :text, placeholder: "Memo", rows: "10", class: "pe__edit__memo"
       .pe__edit__detail
         .pe__edit__time
           %p
-            動画の再生開始時間を入力してください 
-          %input#num0{:onfocus => "number()", :onkeyup => "number()", :size => "3", :type => "text", :value => "#{@post.start / 60}"}分
-          %input#num1{:onfocus => "number()", :onkeyup => "number()", :size => "3", :type => "text", :value => "#{@post.start % 60}"}秒 〜
+            Please enter the start time of the video 
+          %input#num0{:onfocus => "number()", :onkeyup => "number()", :size => "3", :type => "text", :value => "#{@post.start / 60}"}:
+          %input#num1{:onfocus => "number()", :onkeyup => "number()", :size => "3", :type => "text", :value => "#{@post.start % 60}"}: 〜
           %input#start{:name => "post[start]", :type => "hidden", :value => "#{@post.start}"}
         .pe__edit__radio
           %p
-            評価（3段階）
+            Rate on 3-point scale
           %p.pe__edit__technology
             - if @post.radio == "★★★"
               %p
@@ -47,4 +47,4 @@
                 %input#female{:name => "post[radio]", :type => "radio", :value => "★"}
                 %label{:for => "music"} ★  
       .pe__edit__send
-        = f.submit "送信"
+        = f.submit "Submit"
