@@ -1,0 +1,11 @@
+current directory: /Users/kenshosato/Documents/GitHub/rundown/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+/Users/kenshosato/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20230205-73131-14ixn0r.rb extconf.rb
+
+current directory: /Users/kenshosato/Documents/GitHub/rundown/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+make "DESTDIR=" clean
+
+current directory: /Users/kenshosato/Documents/GitHub/rundown/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+make "DESTDIR="
+
+current directory: /Users/kenshosato/Documents/GitHub/rundown/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+make "DESTDIR=" install
