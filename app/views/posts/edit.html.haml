@@ -12,13 +12,13 @@
       .pe__edit__detail
         .pe__edit__time
           %p
-            Please enter the start time of the video 
+            Please enter start times of video to playback
           %input#num0{:onfocus => "number()", :onkeyup => "number()", :size => "3", :type => "text", :value => "#{@post.start / 60}"}:
           %input#num1{:onfocus => "number()", :onkeyup => "number()", :size => "3", :type => "text", :value => "#{@post.start % 60}"}: 〜
           %input#start{:name => "post[start]", :type => "hidden", :value => "#{@post.start}"}
         .pe__edit__radio
           %p
-            Rate on 3-point scale
+            3-Star Rating
           %p.pe__edit__technology
             - if @post.radio == "★★★"
               %p

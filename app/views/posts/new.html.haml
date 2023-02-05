@@ -12,14 +12,14 @@
       .ps__new__detail
         .ps__new__time
           %p
-            Please enter the start time of the video 
+            Please enter start times of video to playback
           %input#num0{:onfocus => "number()", :onkeyup => "number()", :size => "3", :type => "text", placeholder: "00"}:
           %input#num1{:onfocus => "number()", :onkeyup => "number()", :size => "3", :type => "text", placeholder: "00"} 〜
           -# 分から秒するにする計算結果を意図的に見せないようにしているが、実際にDBへ保存されてる値はこの下のinputである、inputタグなので、post[start]でpostモデルのstartに渡している。
           %input#start{:name => "post[start]", :type => "hidden", :value => "0"}
         .ps__new__radio
           %p
-            Rate on 3-point scale
+            3-Star Rating
           .pe__new__technology
             %input#male{:name => "post[radio]", :type => "radio", :value => "★★★"}
             %label{:for => "technology"} ★★★
@@ -30,4 +30,4 @@
             %input#female{:name => "post[radio]", :type => "radio", :value => "★"}
             %label{:for => "music"} ★
       .ps__new__send
-        = f.submit "送信"
+        = f.submit "Submit"

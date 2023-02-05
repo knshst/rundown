@@ -37,5 +37,5 @@
           .ps__right__container
             = form_for ([@post, @comment]), id: "new_comment" do |form|
               = form.text_area :text, placeholder: "Comment", rows: "5", class: "textbox"
-              = form.submit "Submit", class: "form__submit"
+              = form.submit "Comment", class: "form__submit"
 
