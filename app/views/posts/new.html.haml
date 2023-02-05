@@ -2,12 +2,12 @@
   = form_for @post do |f|
     .ps__new
       %p.ps__new__form
-        Creation form
+        New Note
       .pn__special 
         .text-input
           = f.text_field :content, placeholder: "Ex) https://www.youtube.com/watch?v=xxx", size: "30", class: "input1"
           %label{:for => "input1"} YouTube URL
-      = f.text_area :title, placeholder: "Note Title", rows: "1", class: "ps__new__title"
+      = f.text_area :title, placeholder: "Title", rows: "1", class: "ps__new__title"
       = f.text_area :text, placeholder: "Study Notes", rows: "10", class: "ps__new__memo"
       .ps__new__detail
         .ps__new__time
