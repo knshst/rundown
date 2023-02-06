@@ -76,3 +76,5 @@ gem 'jquery-turbolinks'
 gem 'rails-ujs', '~> 5.1.0.beta1'
 gem 'rails-i18n'
 gem 'font-awesome-sass', '~> 4.4.0'
+
+gem "browser"
